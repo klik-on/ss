@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  ss-libev:
+    image: teddysun/shadowsocks-libev
+    restart: always
+    container_name: sslibev
+    environment:
+      TZ: Asia/Jakarta
+    ports:
+      - 9000:9000
+      - 9000:9000/udp
+    volumes:
+      - /etc/shadowsocks-libev:/etc/shadowsocks-libev
+
+  ss-go:
+    image: teddysun/shadowsocks-go
+    restart: always
+    container_name: ssgo
+    environment:
+      TZ: Asia/Jakarta
+    ports:
+      -  8388:8388
+      -  8388:8388/udp
+    volumes:
+      - /etc/shadowsocks-go:/etc/shadowsocks-go
+
+  ss-rust:
+    image: teddysun/shadowsocks-rust
+    restart: always
+    container_name: ssrust
+    environment:
+      TZ: Asia/Jakarta
+    ports:
+      - 9090:9090
+      - 9090:9090/udp
+    volumes:
+      - /etc/shadowsocks-rust:/etc/shadowsocks-rust
