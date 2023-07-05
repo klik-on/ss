@@ -10,7 +10,7 @@ services:
       - 9000:9000
       - 9000:9000/udp
     volumes:
-      - /etc/shadowsocks-libev:/etc/shadowsocks-libev
+      - ${PWD}/etc/shadowsocks-libev:/etc/shadowsocks-libev
 
   ss-go:
     image: teddysun/shadowsocks-go
@@ -22,7 +22,7 @@ services:
       -  8388:8388
       -  8388:8388/udp
     volumes:
-      - /etc/shadowsocks-go:/etc/shadowsocks-go
+      - ${PWD}/etc/shadowsocks-go:/etc/shadowsocks-go
 
   ss-rust:
     image: teddysun/shadowsocks-rust
@@ -34,4 +34,4 @@ services:
       - 9090:9090
       - 9090:9090/udp
     volumes:
-      - /etc/shadowsocks-rust:/etc/shadowsocks-rust
+      - ${PWD}/etc/shadowsocks-rust:/etc/shadowsocks-rust
