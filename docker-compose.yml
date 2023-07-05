@@ -35,3 +35,14 @@ services:
       - 9090:9090/udp
     volumes:
       - ${PWD}/etc/shadowsocks-rust:/etc/shadowsocks-rust
+      
+#  trojan-go:
+#    image: teddysun/trojan-go
+#   restart: always
+#    network_mode: host
+#    container_name: tr-go
+#    environment:
+#      TZ: Asia/Jakarta
+#    volumes:
+#      - ${PWD}/etc/trojan-go:/etc/trojan-go
+      
